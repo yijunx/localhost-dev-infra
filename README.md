@@ -4,6 +4,8 @@ bring up the locally hosted postegres / rabbitmq / pdadmin4 and so on..
 
 # how to run
 
+`docker network create micro-services` to create a network, so everything in the network has DNS, very nice!
+
 `docker-compose build` build images (like copying the init.sql into the image)
 
 `docker-compose up -d` to make it up and running and you can still use the terminal
