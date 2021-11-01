@@ -22,6 +22,15 @@ services:
     networks:
       - default
 
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ../rmq_data/:/var/lib/rabbitmq/
+      - ../rmq_log/:/var/log/rabbitmq
+
 networks:
   default:
     name: micro-services
