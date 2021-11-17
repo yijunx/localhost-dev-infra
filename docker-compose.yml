@@ -30,6 +30,19 @@ services:
     volumes:
       - ../rmq_data/:/var/lib/rabbitmq/
       - ../rmq_log/:/var/log/rabbitmq
+    networks:
+      - default
+
+  minio:
+    image: minio/minio
+    ports:
+      - 9000:9000
+    environment:
+      MINIO_ACCESS_KEY: minio_access_key
+      MINIO_SECRET_KEY: minio_secret_key
+    command: server /data
+    networks:
+      - default
 
 networks:
   default:
